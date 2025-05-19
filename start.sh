@@ -27,4 +27,4 @@ if [ ! -d "images" ] || [ -z "$(ls -A images)" ]; then
 fi
 
 # Start the application
-uvicorn api_server:app --host 0.0.0.0 --port ${PORT:-10000} 
+gunicorn api_server:app --bind 0.0.0.0:${PORT:-10000} --workers 4 --worker-class uvicorn.workers.UvicornWorker 
