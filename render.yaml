@@ -5,7 +5,7 @@ services:
     buildCommand: |
       pip install -r requirements.txt
       chmod +x start.sh
-    startCommand: ./start.sh
+    startCommand: gunicorn api_server:app --bind 0.0.0.0:$PORT --workers 4 --worker-class uvicorn.workers.UvicornWorker
     envVars:
       - key: OPENAI_API_KEY
         sync: false
