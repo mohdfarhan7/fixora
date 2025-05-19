@@ -6,3 +6,4 @@ langchain-community==0.0.24
 openai==1.12.0
 pymupdf==1.23.26
 python-multipart==0.0.9 
+gunicorn==21.2.0 
