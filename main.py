@@ -1,5 +1,4 @@
-import os
-import re
+ re
 import fitz  # PyMuPDF
 from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_openai import OpenAIEmbeddings
@@ -11,7 +10,7 @@ from langchain_community.chat_models import ChatOpenAI
 PDF_PATH = "OMT312630 (3).pdf"
 IMAGE_DIR = "images"
 INDEX_PATH = "faiss_index"
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "YOUR OPEN AI API KEY"
 
 def extract_text_and_images(pdf_path, image_dir="images"):
     os.makedirs(image_dir, exist_ok=True)
